@@ -1,0 +1,78 @@
+QMainWindow {
+    background: #f3f6fa;
+}
+
+QWidget#centralwidget {
+    background: #f3f6fa;
+}
+
+QLabel#lblExpression {
+    color: #64748b;
+    font-family: "Microsoft YaHei UI";
+    font-size: 15px;
+    min-height: 24px;
+    padding: 0 8px;
+}
+
+QLineEdit#display {
+    background: #172a3a;
+    color: #ffffff;
+    border: none;
+    border-radius: 18px;
+    padding: 14px 18px;
+    font-family: "Segoe UI";
+    font-size: 36px;
+    font-weight: 600;
+    min-height: 74px;
+    selection-background-color: #2c7be5;
+}
+
+QLineEdit#display[error="true"] {
+    background: #53212a;
+    color: #ffe3e7;
+    font-size: 24px;
+}
+
+QPushButton {
+    background: #ffffff;
+    color: #172a3a;
+    border: 1px solid #dce3eb;
+    border-radius: 12px;
+    padding: 16px 8px;
+    font-family: "Microsoft YaHei UI";
+    font-size: 21px;
+    font-weight: 600;
+    min-height: 38px;
+}
+
+QPushButton:hover {
+    background: #f8fbff;
+    border-color: #a8bad0;
+}
+
+QPushButton:pressed {
+    background: #e8eef6;
+}
+
+QPushButton[role="function"] {
+    background: #e8edf4;
+    color: #46576c;
+    font-size: 18px;
+}
+
+QPushButton[role="operator"] {
+    background: #dce9f8;
+    color: #1c5f9e;
+    font-size: 24px;
+}
+
+QPushButton#btnEquals {
+    background: #2c7be5;
+    color: #ffffff;
+    border-color: #2c7be5;
+    font-size: 28px;
+}
+
+QPushButton#btnClear {
+    color: #b63d4b;
+}
