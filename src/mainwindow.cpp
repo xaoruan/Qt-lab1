@@ -46,7 +46,13 @@ void MainWindow::bindButtons()
     connect(ui->btnDivide, &QPushButton::clicked, this, [this] { handleOperator(QLatin1Char('/')); });
     connect(ui->btnEquals, &QPushButton::clicked, this, &MainWindow::handleCalculate);
     connect(ui->btnBackspace, &QPushButton::clicked, this, &MainWindow::handleBackspace);
+    connect(ui->btnClearEntry, &QPushButton::clicked, this, &MainWindow::handleClearEntry);
     connect(ui->btnClear, &QPushButton::clicked, this, &MainWindow::handleClear);
+    connect(ui->btnPercent, &QPushButton::clicked, this, &MainWindow::handlePercent);
+    connect(ui->btnReciprocal, &QPushButton::clicked, this, &MainWindow::handleReciprocal);
+    connect(ui->btnSquare, &QPushButton::clicked, this, &MainWindow::handleSquare);
+    connect(ui->btnSqrt, &QPushButton::clicked, this, &MainWindow::handleSquareRoot);
+    connect(ui->btnSign, &QPushButton::clicked, this, &MainWindow::handleToggleSign);
 }
 
 void MainWindow::handleDigit(const QString &digit)
@@ -79,9 +85,45 @@ void MainWindow::handleBackspace()
     updateView();
 }
 
+void MainWindow::handleClearEntry()
+{
+    m_engine.clearEntry();
+    updateView();
+}
+
 void MainWindow::handleClear()
 {
     m_engine.clear();
+    updateView();
+}
+
+void MainWindow::handlePercent()
+{
+    m_engine.percent();
+    updateView();
+}
+
+void MainWindow::handleReciprocal()
+{
+    m_engine.reciprocal();
+    updateView();
+}
+
+void MainWindow::handleSquare()
+{
+    m_engine.square();
+    updateView();
+}
+
+void MainWindow::handleSquareRoot()
+{
+    m_engine.squareRoot();
+    updateView();
+}
+
+void MainWindow::handleToggleSign()
+{
+    m_engine.toggleSign();
     updateView();
 }
 
@@ -95,11 +137,11 @@ void MainWindow::updateView()
 
     QFont font = ui->display->font();
     if (m_engine.isError())
-        font.setPixelSize(24);
+        font.setPixelSize(22);
     else if (m_engine.displayText().size() > 14)
-        font.setPixelSize(27);
+        font.setPixelSize(32);
     else
-        font.setPixelSize(36);
+        font.setPixelSize(44);
     ui->display->setFont(font);
 }
 
@@ -116,6 +158,8 @@ void MainWindow::processKeyText(const QString &text)
     else if (key == QLatin1Char('+') || key == QLatin1Char('-')
              || key == QLatin1Char('*') || key == QLatin1Char('/'))
         handleOperator(key);
+    else if (key == QLatin1Char('%'))
+        handlePercent();
     else if (key == QLatin1Char('='))
         handleCalculate();
 }
@@ -135,6 +179,10 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     case Qt::Key_Escape:
     case Qt::Key_Delete:
         handleClear();
+        event->accept();
+        return;
+    case Qt::Key_Percent:
+        handlePercent();
         event->accept();
         return;
     case Qt::Key_0:

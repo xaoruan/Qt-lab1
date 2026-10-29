@@ -48,6 +48,23 @@ void CalculatorEngine::reset()
     m_error = false;
 }
 
+void CalculatorEngine::showError(const QString &message)
+{
+    m_display = message;
+    m_pendingOperator = QChar();
+    m_waitingForOperand = true;
+    m_justCalculated = false;
+    m_error = true;
+}
+
+void CalculatorEngine::applyUnaryResult(double value)
+{
+    m_display = formatNumber(value);
+    m_waitingForOperand = false;
+    m_justCalculated = false;
+    m_error = false;
+}
+
 void CalculatorEngine::clear()
 {
     reset();
@@ -121,12 +138,8 @@ bool CalculatorEngine::applyPendingOperator()
         break;
     case '/':
         if (qFuzzyIsNull(right)) {
-            m_display = QStringLiteral("错误：除数不能为0");
             m_expression = formatNumber(m_storedValue) + QStringLiteral(" ÷ 0 =");
-            m_pendingOperator = QChar();
-            m_waitingForOperand = true;
-            m_justCalculated = false;
-            m_error = true;
+            showError(QStringLiteral("错误：除数不能为0"));
             return false;
         }
         result /= right;
@@ -207,4 +220,71 @@ void CalculatorEngine::backspace()
     m_display.chop(1);
     if (m_display.isEmpty() || m_display == QStringLiteral("-"))
         m_display = QStringLiteral("0");
+}
+
+void CalculatorEngine::clearEntry()
+{
+    if (m_error) {
+        reset();
+        return;
+    }
+    m_display = QStringLiteral("0");
+    m_waitingForOperand = true;
+    m_justCalculated = false;
+}
+
+void CalculatorEngine::toggleSign()
+{
+    if (m_error || m_display == QStringLiteral("0"))
+        return;
+    if (m_display.startsWith(QLatin1Char('-')))
+        m_display.remove(0, 1);
+    else
+        m_display.prepend(QLatin1Char('-'));
+}
+
+void CalculatorEngine::percent()
+{
+    if (m_error) {
+        reset();
+        return;
+    }
+    applyUnaryResult(currentValue() / 100.0);
+}
+
+void CalculatorEngine::reciprocal()
+{
+    if (m_error) {
+        reset();
+        return;
+    }
+    const double value = currentValue();
+    if (qFuzzyIsNull(value)) {
+        showError(QStringLiteral("错误：除数不能为0"));
+        return;
+    }
+    applyUnaryResult(1.0 / value);
+}
+
+void CalculatorEngine::square()
+{
+    if (m_error) {
+        reset();
+        return;
+    }
+    applyUnaryResult(currentValue() * currentValue());
+}
+
+void CalculatorEngine::squareRoot()
+{
+    if (m_error) {
+        reset();
+        return;
+    }
+    const double value = currentValue();
+    if (value < 0.0) {
+        showError(QStringLiteral("错误：负数不能开平方"));
+        return;
+    }
+    applyUnaryResult(std::sqrt(value));
 }

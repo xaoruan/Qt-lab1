@@ -84,6 +84,24 @@ private slots:
         engine.clear();
         QCOMPARE(engine.displayText(), QStringLiteral("0"));
     }
+
+    void referenceLayoutUnaryOperations()
+    {
+        CalculatorEngine engine;
+        enter(engine, QStringLiteral("9"));
+        engine.reciprocal();
+        QCOMPARE(engine.displayText(), QStringLiteral("0.111111111111"));
+
+        engine.clear();
+        enter(engine, QStringLiteral("7"));
+        engine.square();
+        QCOMPARE(engine.displayText(), QStringLiteral("49"));
+
+        engine.clear();
+        enter(engine, QStringLiteral("81"));
+        engine.squareRoot();
+        QCOMPARE(engine.displayText(), QStringLiteral("9"));
+    }
 };
 
 QTEST_APPLESS_MAIN(CalculatorTests)

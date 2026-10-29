@@ -1,78 +1,80 @@
 QMainWindow {
-    background: #f3f6fa;
+    background: #f4f4f4;
 }
 
 QWidget#centralwidget {
-    background: #f3f6fa;
+    background: #f4f4f4;
 }
 
 QLabel#lblExpression {
-    color: #64748b;
-    font-family: "Microsoft YaHei UI";
-    font-size: 15px;
-    min-height: 24px;
-    padding: 0 8px;
+    background: #fafafa;
+    color: #7a7a7a;
+    font-family: "Segoe UI";
+    font-size: 14px;
+    min-height: 20px;
+    padding: 0 18px;
 }
 
 QLineEdit#display {
-    background: #172a3a;
-    color: #ffffff;
+    background: #fafafa;
+    color: #050505;
     border: none;
-    border-radius: 18px;
-    padding: 14px 18px;
+    border-bottom: 1px solid #e3e3e3;
+    border-radius: 0;
+    padding: 10px 18px;
     font-family: "Segoe UI";
-    font-size: 36px;
-    font-weight: 600;
-    min-height: 74px;
-    selection-background-color: #2c7be5;
+    font-size: 44px;
+    font-weight: 500;
+    min-height: 82px;
+    selection-background-color: #8ac2ea;
 }
 
 QLineEdit#display[error="true"] {
-    background: #53212a;
-    color: #ffe3e7;
-    font-size: 24px;
+    background: #fafafa;
+    color: #a4262c;
+    font-size: 22px;
 }
 
 QPushButton {
     background: #ffffff;
-    color: #172a3a;
-    border: 1px solid #dce3eb;
-    border-radius: 12px;
-    padding: 16px 8px;
+    color: #111111;
+    border: 1px solid #e2e2e2;
+    border-radius: 0;
+    padding: 12px 4px;
     font-family: "Microsoft YaHei UI";
-    font-size: 21px;
-    font-weight: 600;
-    min-height: 38px;
+    font-size: 20px;
+    font-weight: 500;
+    min-height: 44px;
 }
 
 QPushButton:hover {
-    background: #f8fbff;
-    border-color: #a8bad0;
+    background: #f8f8f8;
+    border-color: #d0d0d0;
 }
 
 QPushButton:pressed {
-    background: #e8eef6;
+    background: #ededed;
 }
 
 QPushButton[role="function"] {
-    background: #e8edf4;
-    color: #46576c;
-    font-size: 18px;
+    background: #fafafa;
+    color: #1b1b1b;
+    font-size: 17px;
 }
 
 QPushButton[role="operator"] {
-    background: #dce9f8;
-    color: #1c5f9e;
-    font-size: 24px;
+    background: #ffffff;
+    color: #111111;
+    font-size: 22px;
 }
 
 QPushButton#btnEquals {
-    background: #2c7be5;
-    color: #ffffff;
-    border-color: #2c7be5;
-    font-size: 28px;
+    background: #8ac2ea;
+    color: #101820;
+    border-color: #8ac2ea;
+    font-size: 25px;
 }
 
 QPushButton#btnClear {
-    color: #b63d4b;
+    color: #111111;
 }

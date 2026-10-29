@@ -32,7 +32,13 @@ private:
     void handleOperator(const QChar &op);
     void handleCalculate();
     void handleBackspace();
+    void handleClearEntry();
     void handleClear();
+    void handlePercent();
+    void handleReciprocal();
+    void handleSquare();
+    void handleSquareRoot();
+    void handleToggleSign();
     void updateView();
     void processKeyText(const QString &text);
 

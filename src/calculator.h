@@ -15,11 +15,19 @@ public:
     void inputOperator(const QChar &op);
     void calculate();
     void backspace();
+    void clearEntry();
     void clear();
+    void toggleSign();
+    void percent();
+    void reciprocal();
+    void square();
+    void squareRoot();
 
 private:
     static QString formatNumber(double value);
     bool applyPendingOperator();
+    void applyUnaryResult(double value);
+    void showError(const QString &message);
     void reset();
     double currentValue() const;
 
