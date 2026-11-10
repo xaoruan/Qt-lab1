@@ -1,4 +1,5 @@
 /build/
+/build-*/
 /captures/
 *.user
 *.autosave
