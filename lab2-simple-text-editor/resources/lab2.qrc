@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="styles/styles.qss">styles.qss</file>
+        <file alias="icons/app.svg">icons/app.svg</file>
+        <file alias="icons/new.svg">icons/new.svg</file>
+        <file alias="icons/open.svg">icons/open.svg</file>
+        <file alias="icons/save.svg">icons/save.svg</file>
+        <file alias="icons/save_as.svg">icons/save_as.svg</file>
+        <file alias="icons/undo.svg">icons/undo.svg</file>
+        <file alias="icons/redo.svg">icons/redo.svg</file>
+        <file alias="icons/cut.svg">icons/cut.svg</file>
+        <file alias="icons/copy.svg">icons/copy.svg</file>
+        <file alias="icons/paste.svg">icons/paste.svg</file>
+        <file alias="icons/find.svg">icons/find.svg</file>
+        <file alias="icons/replace.svg">icons/replace.svg</file>
+        <file alias="icons/wordwrap.svg">icons/wordwrap.svg</file>
+        <file alias="icons/linenumber.svg">icons/linenumber.svg</file>
+        <file alias="icons/fontcolor.svg">icons/fontcolor.svg</file>
+        <file alias="icons/background.svg">icons/background.svg</file>
+        <file alias="icons/about.svg">icons/about.svg</file>
+    </qresource>
+</RCC>

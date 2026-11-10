@@ -1,0 +1,122 @@
+QMainWindow {
+    background: #eef2f6;
+}
+
+QMenuBar {
+    background: #ffffff;
+    border-bottom: 1px solid #d9e0e7;
+    padding: 2px;
+}
+
+QMenuBar::item {
+    padding: 5px 9px;
+    border-radius: 4px;
+}
+
+QMenuBar::item:selected {
+    background: #e8f0fb;
+}
+
+QMenu {
+    background: #ffffff;
+    border: 1px solid #cfd7df;
+    padding: 5px;
+}
+
+QMenu::item {
+    padding: 6px 30px 6px 28px;
+    border-radius: 3px;
+}
+
+QMenu::item:selected {
+    background: #dceafa;
+}
+
+QToolBar {
+    background: #f8fafc;
+    border: none;
+    border-bottom: 1px solid #d9e0e7;
+    spacing: 4px;
+    padding: 5px 8px;
+}
+
+QToolButton {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+QToolButton:hover {
+    background: #e8f0fb;
+    border-color: #bed2ec;
+}
+
+QToolButton:checked {
+    background: #d7e8fb;
+    border-color: #9dc0e8;
+}
+
+QPlainTextEdit#editor {
+    border: 1px solid #cbd5df;
+    border-radius: 5px;
+    padding: 6px;
+    selection-background-color: #b9d7fb;
+    selection-color: #102033;
+    font-family: "Cascadia Mono", "Consolas", "Microsoft YaHei UI";
+    font-size: 11pt;
+}
+
+QStatusBar {
+    background: #ffffff;
+    border-top: 1px solid #d9e0e7;
+}
+
+QStatusBar QLabel {
+    color: #536170;
+    padding: 2px 8px;
+}
+
+QDialog {
+    background: #f7f9fb;
+}
+
+QLineEdit {
+    background: #ffffff;
+    border: 1px solid #bcc8d4;
+    border-radius: 4px;
+    padding: 6px 8px;
+    selection-background-color: #b9d7fb;
+}
+
+QLineEdit:focus {
+    border: 1px solid #4f8ed6;
+}
+
+QPushButton {
+    background: #ffffff;
+    border: 1px solid #bcc8d4;
+    border-radius: 4px;
+    padding: 6px 14px;
+}
+
+QPushButton:hover {
+    background: #eaf2fb;
+    border-color: #9eb8d4;
+}
+
+QPushButton:pressed {
+    background: #dceafa;
+}
+
+QPushButton:default {
+    background: #e5f0fc;
+    border-color: #72a3da;
+}
+
+QLabel#messageLabel[error="true"] {
+    color: #a33b32;
+}
+
+QLabel#messageLabel[error="false"] {
+    color: #3c6d4b;
+}

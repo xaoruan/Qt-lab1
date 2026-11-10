@@ -43,3 +43,8 @@ add_executable(keyboard_tests
 )
 target_link_libraries(keyboard_tests PRIVATE calculator_core Qt6::Widgets Qt6::Test)
 add_test(NAME keyboard_tests COMMAND keyboard_tests)
+
+option(BUILD_LAB2 "Build the experiment 2 text editor" ON)
+if(BUILD_LAB2)
+    add_subdirectory(lab2-simple-text-editor)
+endif()
