@@ -18,3 +18,12 @@ ctest --test-dir build --output-on-failure
 
 数字、`.`、`+`、`-`、`*`、`/` 与鼠标按钮功能一致；Enter 或 `=` 计算，
 Backspace 退格，Esc 或 Delete 清除。
+
+## 实验二：简单文本编辑器
+
+实验二位于 `lab2-simple-text-editor/`，独立实现多窗口文本编辑器、文件读写、
+查找替换、格式设置、状态栏、行号显示和定时自动保存。实验一工程保持独立，
+根目录的 CMake 工程可以同时构建两个实验。
+
+实验二构建与测试说明见
+[`lab2-simple-text-editor/README.md`](lab2-simple-text-editor/README.md)。
