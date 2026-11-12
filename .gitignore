@@ -1,5 +1,6 @@
 /build/
 /build-*/
+/lab2-simple-text-editor/build/
 /captures/
 *.user
 *.autosave
